@@ -1,0 +1,41 @@
+/* 
+    Document   : styles
+    Created on : 17-dic-2013, 9:46:04
+    Author     : alumno
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+#profile:hover  #startSession{
+display:block;
+}
+
+#startSession{
+border:solid 2px;
+border-color:#150000;
+padding:12px;
+margin-top:40px;
+width:180px;
+height:190px;
+border-radius:8px;
+background-color:#888;
+display:none;
+position:absolute;
+top:20px;
+
+}
+#startSession button, #startSession a{
+margin-top:20px;
+
+}
+#startSession p{
+margin-bottom:-4px;
+font-size:16px;
+}
+#startSession strong{
+font-size:15px;
+
+}
+
+
