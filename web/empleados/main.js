@@ -7,12 +7,22 @@ app.config(function($routeProvider) {
                 controller: "MainController"         //Controlador que hay que cargar
             }
     )
+
+    $routeProvider.when("/cuentaBancaria/search", //Ruta que usaremos para que cargue
+            {
+                templateUrl: "cuentas.html", //Pagina que hay que cargar
+                controller: "MainController"         //Controlador que hay que cargar
+            }
+    )
+
 });
 
 
+
+
 app.controller('MainController', function($scope, $http) {
-    
-    
-    
-    
+
+
+
+
 }); 
