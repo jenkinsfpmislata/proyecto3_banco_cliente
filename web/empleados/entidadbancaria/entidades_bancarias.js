@@ -27,12 +27,14 @@ app.controller('EntidadesBancariasSearchController', function($scope, $http, url
         $scope.entidadesBancarias = resultado;
     });
     $scope.borrar = function(idEntidadBancaria) {
-        $http.delete("/daIgual/api/EntidadBancaria/" + idEntidadBancaria).success(function(result) {
+        $http.delete(urlBase + "/api/EntidadBancaria/" + idEntidadBancaria).success(function(result) {
 
         });
         $location.path("index.html");
     };
-
+    $scope.buscar = function(){
+        
+    }
 });
 
 app.controller('EntidadesBancariasNewController', function($scope, $http, urlBase, $location) {
@@ -42,7 +44,7 @@ app.controller('EntidadesBancariasNewController', function($scope, $http, urlBas
     
     $scope.insert = function() {
 
-        $http.post("/daIgual/api/EntidadBancaria", $scope.entidadBancaria).success(function(result) {
+        $http.post(urlBase + "/api/EntidadBancaria/", $scope.entidadBancaria).success(function(result) {
             $scope.entidadBancaria = result;
         });
         $location.path("/entidadBancaria/search");
@@ -60,7 +62,7 @@ app.controller('EntidadesBancariasUpdateController', function($location,$scope, 
     });
     
     $scope.update = function() {
-        $http.put("/daIgual/api/EntidadBancaria/"+$scope.entidadBancaria.idEntidad, $scope.entidadBancaria).success(function(result) {
+        $http.put(urlBase + "/api/EntidadBancaria/"+$scope.entidadBancaria.idEntidad, $scope.entidadBancaria).success(function(result) {
             $scope.entidadBancaria = result;
         });
         $location.path("/entidadBancaria/search");

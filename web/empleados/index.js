@@ -1,6 +1,6 @@
 var app = angular.module("app", ['ngRoute']);
 
-app.constant("urlBase","/daIgual");
+app.constant("urlBase","/proyecto3_banco_servidor");
 
 app.config(function($routeProvider) {
     $routeProvider.otherwise({
