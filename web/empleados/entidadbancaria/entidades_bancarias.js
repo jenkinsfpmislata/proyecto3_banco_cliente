@@ -37,7 +37,7 @@ app.controller('EntidadesBancariasSearchController', function($scope, $http, url
 
 app.controller('EntidadesBancariasNewController', function($scope, $http, urlBase, $location) {
     
-    $scope.entidadBancaria = null;
+    $scope.entidadBancaria= null;
     
     
     $scope.insert = function() {
@@ -45,7 +45,7 @@ app.controller('EntidadesBancariasNewController', function($scope, $http, urlBas
         $http.post("/daIgual/api/EntidadBancaria", $scope.entidadBancaria).success(function(result) {
             $scope.entidadBancaria = result;
         });
-        $location.path("/entidadbancaria/search");
+        $location.path("/entidadBancaria/search");
     };
     $scope.buttonOK = function() {
         $scope.insert();
@@ -53,13 +53,19 @@ app.controller('EntidadesBancariasNewController', function($scope, $http, urlBas
 });
 
 
-app.controller('EntidadesBancariasUpdateController', function($scope, $http, urlBase, $routeParams) {
-    $http.get(urlBase + "/api/EntidadBancaria/" + $routeParams.idEntidadBancaria).success(function(resultado) {
-        $scope.entidadBancaria = resultado;
+app.controller('EntidadesBancariasUpdateController', function($location,$scope, $http, urlBase, $routeParams) {
+    $scope.entidadBancaria= null;
+    $http.get(urlBase + "/api/EntidadBancaria/" + $routeParams.idEntidadBancaria).success(function(result) {
+        $scope.entidadBancaria = result;
     });
+    
     $scope.update = function() {
-        $http.put("")
+        $http.put("/daIgual/api/EntidadBancaria/"+$scope.entidadBancaria.idEntidad, $scope.entidadBancaria).success(function(result) {
+            $scope.entidadBancaria = result;
+        });
+        $location.path("/entidadBancaria/search");
     };
+ 
     $scope.buttonOK = function() {
         $scope.update();
     };
