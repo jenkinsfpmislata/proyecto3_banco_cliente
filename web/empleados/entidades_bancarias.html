@@ -1,0 +1,19 @@
+<h1 align="center">Entidades Bancarias</h1>
+<div align="center" style="margin: 40px 50px;" ng-controller="EntidadesBancariasController"> 
+    <input ng-model="busque" type="text" class="input-medium search-query">
+    <button ng-click="buscar()" class="btn">buscar</button>
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th><th>Codigo</th><th>Nombre</th><th>Cif</th><th>Tipo Entidad</th><th></th><th></th>
+        </tr>
+        <tr ng-repeat="entidadBancaria in entidadesBancarias">
+            <td>{{entidadBancaria.id}}</td>
+            <td>{{entidadBancaria.codigoEntidad}}</td>
+            <td>{{entidadBancaria.nombre}}</td>
+            <td>{{entidadBancaria.cif}}</td>
+            <td>{{entidadBancaria.tipoEntidadBancaria}}</td>
+            <td><button ng-click="read(entidadBancaria.id)" class="btn btn-info">Ver</button></td>
+            <td><button ng-click="borrar(entidadBancaria.id)" class="btn">Borrar</button></td>
+    </table>
+    <p><a href="insert.html">Insertar Entidad</a></p>
+</div>
