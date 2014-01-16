@@ -1,0 +1,26 @@
+<div align="left" style="margin: 40px 50px;"> 
+
+    <div id="contieneTabla" style="margin: 40px 100px">
+        <h5>Inserte su entidad Bancaria nueva</h5>
+                
+        <form>
+            <input type="text" ng-model="entidadBancaria.idEntidad" class="input-small" placeholder="IdEntidad"><br>
+            <input type="text" ng-model="entidadBancaria.codigoEntidad" class="input-small" placeholder="Codigo"><br>
+            <input type="text" ng-model="entidadBancaria.nombre" class="input-small" placeholder="C.I.F."><br>
+            <input type="text" ng-model="entidadBancaria.cif" class="input-small" placeholder="Nombre"> <br>
+
+
+            <select ng-model="entidadBancaria.tipoEntidadBancaria">
+                <option selected>Elije entidad</option>
+                <option value="CajaAhorro">Caja de ahorros</option>
+                <option value="Banco">Banco</option>
+                <option value="CoopCredito">Cooperativa Credito</option>
+                <option value="EstabFinanciero">Establ. Financiero</option>
+            </select>
+        </form>
+        <br/><br/><a on-click="buttonOK()">adsf</a>
+            <input type="submit" class="btn" ng-click="buttonOK()">
+        
+        <p><a href="#/">Inicio</a></p>
+    </div>
+</div>

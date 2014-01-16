@@ -1,5 +1,5 @@
 <h1 align="center">Entidades Bancarias</h1>
-<div align="center" style="margin: 40px 50px;" ng-controller="EntidadesBancariasController"> 
+<div align="center" style="margin: 40px 50px;" ng-controller="EntidadesBancariasSearchController"> 
     <input ng-model="busque" type="text" class="input-medium search-query">
     <button ng-click="buscar()" class="btn">buscar</button>
     <table class="table table-bordered">
@@ -12,8 +12,8 @@
             <td>{{entidadBancaria.nombre}}</td>
             <td>{{entidadBancaria.cif}}</td>
             <td>{{entidadBancaria.tipoEntidadBancaria}}</td>
-            <td><button ng-click="read(entidadBancaria.id)" class="btn btn-info">Ver</button></td>
+            <td><a href='#/entidadBancaria/update/{{entidadBancaria.id}}' class="btn btn-info">Editar</a></td>
             <td><button ng-click="borrar(entidadBancaria.id)" class="btn">Borrar</button></td>
     </table>
-    <p><a href="insert.html">Insertar Entidad</a></p>
+    <p><a href="#/entidadBancaria/new" >Insertar Entidad</a></p>
 </div>
