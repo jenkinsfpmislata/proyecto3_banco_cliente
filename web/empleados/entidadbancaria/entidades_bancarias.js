@@ -22,19 +22,31 @@ app.config(function($routeProvider) {
 /*ruta editar y nuevo*/
 
 app.controller('EntidadesBancariasSearchController', function($scope, $http, urlBase) {
-    $scope.busque = "Entidad Bancaria";
+
+    $scope.entidad = null;
+    $scope.entidadesBancarias = [];
+    $scope.nombreEntidadBancaria = null;
+    $scope.buscar = function() {
+        var filter = {
+            nombreEntidadBancaria: $scope.nombreEntidadBancaria
+        };
+        $http.get(urlBase+"/api/EntidadBancaria", {params: filter}).success(function(result) {
+            $scope.entidadesBancarias = result;
+        });
+    };
+    
     $http.get(urlBase + "/api/EntidadBancaria/").success(function(resultado) {
         $scope.entidadesBancarias = resultado;
+        
     });
     $scope.borrar = function(idEntidadBancaria) {
         $http.delete(urlBase + "/api/EntidadBancaria/" + idEntidadBancaria).success(function(result) {
 
         });
-        $location.path("index.html");
+        $location.path("/entidadBancaria/search");
     };
-    $scope.buscar = function(){
-        
-    }
+    
+    $scope.buscar();
 });
 
 app.controller('EntidadesBancariasNewController', function($scope, $http, urlBase, $location) {
@@ -60,7 +72,7 @@ app.controller('EntidadesBancariasUpdateController', function($location,$scope, 
     $http.get(urlBase + "/api/EntidadBancaria/" + $routeParams.idEntidadBancaria).success(function(result) {
         $scope.entidadBancaria = result;
     });
-    
+    $scope.descativa="disabled";
     $scope.update = function() {
         $http.put(urlBase + "/api/EntidadBancaria/"+$scope.entidadBancaria.idEntidad, $scope.entidadBancaria).success(function(result) {
             $scope.entidadBancaria = result;
