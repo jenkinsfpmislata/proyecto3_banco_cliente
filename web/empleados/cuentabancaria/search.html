@@ -1,62 +1,20 @@
-
-    
-    <div class="page-header" ng-controller="CuentasBancariasSearchController">
-  <h1>Pepe Gutierrez Garcia <small>48406055M</small></h1>
+<h1 align="center">Cuentas Bancarias</h1>
+<div align="center" style="margin: 40px 50px;" ng-controller="CuentasBancariasSearchController"> 
+    <input type="text" class="input-medium search-query" placeholder="Find by Entity" ng-model="nombreCuentaBancaria">
+    <button ng-click="buscar()" class="btn">buscar</button>
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th><th>Sucursal</th><th>Numero</th><th>Cif</th><th>Dc</th><th>Saldo</th><th></th><th></th>
+        </tr>
+        <tr ng-repeat="cuentaBancaria in cuentasBancarias">
+            <td>{{cuentaBancaria.idCuentaBancaria}}</td>
+            <td>{{cuentaBancaria.sucursalBancaria.nombre}}</td>
+            <td>{{cuentaBancaria.numeroDeCuenta}}</td>
+            <td>{{cuentaBancaria.cif}}</td>
+            <td>{{cuentaBancaria.dc}}</td>
+            <td>{{cuentaBancaria.saldo}}</td>
+            <td><a href='#/cuentaBancaria/update/{{cuentaBancaria.idCuentaBancaria}}' class="btn btn-info">Editar</a></td>
+            <td><button ng-click="borrar(cuentaBancaria.idCuentaBancaria)" class="btn btn-danger">Borrar</button></td>
+    </table>
+    <p><a href="#/cuentaBancaria/new" >Insertar Cuenta</a></p>
 </div>
-    
-    <ol class="breadcrumb">
-  <li class="active">Cuentas</li>
-  
-</ol>
-        
-   <ul class="nav nav-pills nav-collapse">
-  <li class="active">
-    <a href="#">
-      <span class="badge pull-right">3</span>
-      Numero de Cuentas  
-    </a>
-  </li>
- 
-</ul>
-
-        <table  class="table table-striped"  >
-            <thead>
-                <tr>
-                    <td>id</td>
-                    <td>Sucursal</td>
-                    <td>Numero de cuenta</td>
-                    <td>dc</td>
-                    <td>Saldo</td>
-                     <td>Cif</td>
-                     <td>Movimientos</td>
-                </tr> 
-                 </thead>
-                <tr>
-                    <td>1</td>
-                    <td>Sucursal1</td>
-                    <td>0001 0002</td>
-                    <td>f224</td>
-                    <td>25000€</td>
-                     <td>14455548M</td>
-                     <td><a href="movimiento.html">Lista de movimientos</a></td>
-                </tr> 
-                <tr>
-                    <td>2</td>
-                    <td>Sucursal2</td>
-                    <td>0001 0003</td>
-                    <td>f554</td>
-                    <td>1000€</td>
-                     <td>14455548M</td>
-                     <td><a href="movimiento.html">Lista de movimientos</a></td>
-                </tr> 
-                <tr>
-                    <td>3</td>
-                    <td>Sucursal1</td>
-                    <td>0001 0004</td>
-                    <td>fff4</td>
-                    <td>200€</td>
-                     <td>14455548M</td>
-                     <td><a href="movimiento.html">Lista de movimientos</a></td>
-                </tr>  
-                     
-        </table>
