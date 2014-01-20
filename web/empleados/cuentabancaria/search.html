@@ -4,7 +4,7 @@
     <button ng-click="buscar()" class="btn">buscar</button>
     <table class="table table-bordered">
         <tr>
-            <th>Id</th><th>Sucursal</th><th>Numero</th><th>Cif</th><th>Dc</th><th>Saldo</th><th></th><th></th>
+            <th>Id</th><th>Sucursal</th><th>Numero</th><th>Cif</th><th>Dc</th><th>Saldo</th>
         </tr>
         <tr ng-repeat="cuentaBancaria in cuentasBancarias">
             <td>{{cuentaBancaria.idCuentaBancaria}}</td>
@@ -13,8 +13,6 @@
             <td>{{cuentaBancaria.cif}}</td>
             <td>{{cuentaBancaria.dc}}</td>
             <td>{{cuentaBancaria.saldo}}</td>
-            <td><a href='#/cuentaBancaria/update/{{cuentaBancaria.idCuentaBancaria}}' class="btn btn-info">Editar</a></td>
-            <td><button ng-click="borrar(cuentaBancaria.idCuentaBancaria)" class="btn btn-danger">Borrar</button></td>
-    </table>
+            </table>
     <p><a href="#/cuentaBancaria/new" >Insertar Cuenta</a></p>
 </div>

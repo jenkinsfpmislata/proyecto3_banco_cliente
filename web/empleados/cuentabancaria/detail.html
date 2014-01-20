@@ -4,8 +4,12 @@
         <h5>Inserte su cuenta Bancaria nueva</h5>
                 
         <form>
-            <input type="text" ng-model="cuentaBancaria.idCuentaBancaria" class="input-small" placeholder="idCuentaBancaria" {{descativa}}><br>
-            <input type="text" ng-model="cuentaBancaria.sucursalBancaria.nombre" class="input-small" placeholder="nombre"><br>
+            
+            <select ng-model="cuentaBancaria.sucursalBancaria.idSucursalBancaria"  ng-options="provincia.idProvincia as provincia.nombre for provincia in provincias">
+            <option value="">-- Elige Sucursal --</option>
+            </select>
+            
+            <input type="text" ng-model="cuentaBancaria.numeroDeCuenta" class="input-small" placeholder="Numero"><br>
             <input type="text" ng-model="cuentaBancaria.dc" class="input-small" placeholder="DC"><br>
             <input type="text" ng-model="cuentaBancaria.cif" class="input-small" placeholder="Cif"> <br>
             <input type="text" ng-model="cuentaBancaria.saldo" class="input-small" placeholder="Saldo"> <br>

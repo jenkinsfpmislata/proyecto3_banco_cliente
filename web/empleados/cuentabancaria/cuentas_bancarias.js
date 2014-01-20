@@ -23,6 +23,8 @@ app.config(function($routeProvider) {
 
 app.controller('CuentasBancariasSearchController', function($scope, $http, urlBase) {
 
+    
+    
     $scope.cuenta = null;
     $scope.cuentasBancarias = [];
     $scope.nombreCuentaBancaria = null;
@@ -50,6 +52,19 @@ app.controller('CuentasBancariasSearchController', function($scope, $http, urlBa
 });
 
 app.controller('CuentasBancariasNewController', function($scope, $http, urlBase, $location) {
+    
+     $scope.provincias = [{
+        idProvincia: 1,
+        nombre: "Sucursal1"
+    }, {
+        idProvincia: 2,
+        nombre: "Sucursal2"
+    }, {
+        idProvincia: 3,
+        nombre: "Sucursal3"     
+    }];
+ 
+    $scope.provincia = null;
     
     $scope.cuentaBancaria= null;
     

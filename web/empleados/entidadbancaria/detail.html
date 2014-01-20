@@ -4,7 +4,7 @@
         <h5>Inserte su entidad Bancaria nueva</h5>
                 
         <form>
-            <input type="text" ng-model="entidadBancaria.idEntidad" class="input-small" placeholder="IdEntidad" {{descativa}}><br>
+            <input type="text" ng-model="entidadBancaria.idEntidad" class="input-small" placeholder="IdEntidad" {{desactiva}}><br>
             <input type="text" ng-model="entidadBancaria.codigoEntidad" class="input-small" placeholder="Codigo"><br>
             <input type="text" ng-model="entidadBancaria.nombre" class="input-small" placeholder="C.I.F."><br>
             <input type="text" ng-model="entidadBancaria.cif" class="input-small" placeholder="Nombre"> <br>
@@ -12,10 +12,10 @@
 
             <select ng-model="entidadBancaria.tipoEntidadBancaria">
                 <option selected>Elije entidad</option>
-                <option value="CAJAAHORRO">Caja de ahorros</option>
+                <option value="CAJADEAHORRO">Caja de ahorros</option>
                 <option value="BANCO">Banco</option>
-                <option value="COOPCREDITO">Cooperativa Credito</option>
-                <option value="ESTABFINANCIERO">Establ. Financiero</option>
+                <option value="COOPERATIVA">Cooperativa Credito</option>
+                <option value="ESTABLECIMIENTO">Establ. Financiero</option>
             </select>
         </form>
         <br/><br/>
