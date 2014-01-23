@@ -53,22 +53,28 @@ app.controller('CuentasBancariasSearchController', function($scope, $http, urlBa
 
 app.controller('CuentasBancariasNewController', function($scope, $http, urlBase, $location) {
     
-     $scope.provincias = [{
-        idProvincia: 1,
-        nombre: "Sucursal1"
-    }, {
-        idProvincia: 2,
-        nombre: "Sucursal2"
-    }, {
-        idProvincia: 3,
-        nombre: "Sucursal3"     
-    }];
+    
+    
+    $scope.entidadesBancarias;
  
-    $scope.provincia = null;
+    $scope.entidad = null;
+    
+    $scope.sucursalesBancarias;
+ 
+    $scope.sucursal = null;
     
     $scope.cuentaBancaria= null;
     
+    $http.get(urlBase + "/api/SucursalBancaria/").success(function(resultado) {
+        $scope.sucursalesBancarias = resultado;
+        
+    });
     
+    
+    $http.get(urlBase + "/api/EntidadBancaria/").success(function(resultado) {
+        $scope.entidadesBancarias = resultado;
+        
+    });
     $scope.insert = function() {
 
         $http.post(urlBase + "/api/CuentaBancaria/", $scope.cuentaBancaria).success(function(result) {

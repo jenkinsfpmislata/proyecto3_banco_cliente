@@ -5,9 +5,13 @@
                 
         <form>
             
-            <select ng-model="cuentaBancaria.sucursalBancaria.idSucursalBancaria"  ng-options="provincia.idProvincia as provincia.nombre for provincia in provincias">
+            <select ng-model="entidad" ng-options="entidad.idEntidad as entidad.nombre for entidad in entidadesBancarias">
+            <option value="">-- Elige Entidad --</option>
+            </select><br>
+            
+            <select ng-model="cuentaBancaria.sucursalBancaria.idSucursalBancaria"  ng-options="sucursal.idSucursalBancaria as sucursal.nombre for sucursal in sucursalesBancarias">
             <option value="">-- Elige Sucursal --</option>
-            </select>
+            </select><br>
             
             <input type="text" ng-model="cuentaBancaria.numeroDeCuenta" class="input-small" placeholder="Numero"><br>
             <input type="text" ng-model="cuentaBancaria.dc" class="input-small" placeholder="DC"><br>
