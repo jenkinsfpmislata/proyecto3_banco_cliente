@@ -28,6 +28,7 @@ app.controller('CuentasBancariasSearchController', function($scope, $http, urlBa
     $scope.cuenta = null;
     $scope.cuentasBancarias = [];
     $scope.nombreCuentaBancaria = null;
+    
     $scope.buscar = function() {
         var filter = {
             nombreCuentaBancaria: $scope.nombreCuentaBancaria
@@ -57,7 +58,7 @@ app.controller('CuentasBancariasNewController', function($scope, $http, urlBase,
     
     $scope.entidadesBancarias;
  
-    $scope.entidad = null;
+    $scope.idEntidad = null;
     
     $scope.sucursalesBancarias;
  
@@ -65,10 +66,19 @@ app.controller('CuentasBancariasNewController', function($scope, $http, urlBase,
     
     $scope.cuentaBancaria= null;
     
-    $http.get(urlBase + "/api/SucursalBancaria/").success(function(resultado) {
-        $scope.sucursalesBancarias = resultado;
-        
-    });
+    $scope.$watch("idEntidad",
+            function() {
+
+                if ($scope.idEntidad) {
+                    $http.get(urlBase + "/api/EntidadBancaria/" + $scope.idEntidad + "/sucursalesBancarias/").success(function(resultado) {
+                        $scope.sucursalesBancarias = resultado;
+                    });
+                } else {
+                    $scope.sucursalesBancarias = [];
+                }
+
+            });
+    
     
     
     $http.get(urlBase + "/api/EntidadBancaria/").success(function(resultado) {
