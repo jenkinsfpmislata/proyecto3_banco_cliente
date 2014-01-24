@@ -28,13 +28,14 @@ app.controller('CuentasBancariasSearchController', function($scope, $http, urlBa
     $scope.cuenta = null;
     $scope.cuentasBancarias = [];
     $scope.nombreCuentaBancaria = null;
+    $scope.nombre = null;
     
     $scope.buscar = function() {
-        var filter = {
-            nombreCuentaBancaria: $scope.nombreCuentaBancaria
-        };
-        $http.get(urlBase+"/api/CuentaBancaria", {params: filter}).success(function(result) {
+        
+        $http.get(urlBase+"/api/CuentaBancaria/"+$scope.nombre).success(function(result) {
+            
             $scope.cuentasBancarias = result;
+            
         });
     };
     

@@ -26,19 +26,21 @@ app.controller('EntidadesBancariasSearchController', function($scope, $http, url
     $scope.entidad = null;
     $scope.entidadesBancarias = [];
     $scope.nombreEntidadBancaria = null;
-    $scope.buscar = function() {
-        var filter = {
-            nombreEntidadBancaria: $scope.nombreEntidadBancaria
-        };
-        $http.get(urlBase+"/api/EntidadBancaria", {params: filter}).success(function(result) {
-            $scope.entidadesBancarias = result;
-        });
-    };
+    
+   
     
     $http.get(urlBase + "/api/EntidadBancaria/").success(function(resultado) {
         $scope.entidadesBancarias = resultado;
         
     });
+    
+     $scope.buscar = function() {
+        
+        $http.get(urlBase+"/api/EntidadBancaria/Bankia").success(function(result) {
+            $scope.entidadesBancarias = result;
+        });
+    };
+    
     $scope.borrar = function(idEntidadBancaria) {
         $http.delete(urlBase + "/api/EntidadBancaria/" + idEntidadBancaria).success(function(result) {
 

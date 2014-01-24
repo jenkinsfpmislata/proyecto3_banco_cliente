@@ -1,6 +1,6 @@
 <h1 align="center">Cuentas Bancarias</h1>
 <div align="center" style="margin: 40px 50px;" ng-controller="CuentasBancariasSearchController"> 
-    <input type="text" class="input-medium search-query" placeholder="Find by Entity" ng-model="nombreCuentaBancaria">
+    <input type="text" class="input-medium search-query" placeholder="Find by Entity" ng-model="nombre">
     <button ng-click="buscar()" class="btn">buscar</button>
     <table class="table table-bordered">
         <tr>
@@ -13,6 +13,6 @@
             <td>{{cuentaBancaria.cif}}</td>
             <td>{{cuentaBancaria.dc}}</td>
             <td>{{cuentaBancaria.saldo}}</td>
-            </table>
+    </table>
     <p><a href="#/cuentaBancaria/new" >Insertar Cuenta</a></p>
 </div>
