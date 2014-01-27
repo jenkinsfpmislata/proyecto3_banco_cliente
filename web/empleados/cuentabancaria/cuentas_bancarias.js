@@ -28,11 +28,11 @@ app.controller('CuentasBancariasSearchController', function($scope, $http, urlBa
     $scope.cuenta = null;
     $scope.cuentasBancarias = [];
     $scope.nombreCuentaBancaria = null;
-    $scope.nombre = null;
+    $scope.cif = "";
     
     $scope.buscar = function() {
         
-        $http.get(urlBase+"/api/CuentaBancaria/"+$scope.nombre).success(function(result) {
+        $http.get(urlBase+"/api/CuentaBancaria?cif="+$scope.cif).success(function(result) {
             
             $scope.cuentasBancarias = result;
             

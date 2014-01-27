@@ -26,6 +26,7 @@ app.controller('EntidadesBancariasSearchController', function($scope, $http, url
     $scope.entidad = null;
     $scope.entidadesBancarias = [];
     $scope.nombreEntidadBancaria = null;
+    $scope.nombre = "";
     
    
     
@@ -36,7 +37,7 @@ app.controller('EntidadesBancariasSearchController', function($scope, $http, url
     
      $scope.buscar = function() {
         
-        $http.get(urlBase+"/api/EntidadBancaria/Bankia").success(function(result) {
+        $http.get(urlBase+"/api/EntidadBancaria/?nombre="+$scope.nombre).success(function(result) {
             $scope.entidadesBancarias = result;
         });
     };
