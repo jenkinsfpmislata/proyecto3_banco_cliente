@@ -4,13 +4,14 @@
     <button ng-click="buscar()" class="btn">buscar</button>
     <table class="table table-bordered">
         <tr>
-            <th>Id</th><th>Sucursal</th><th>Numero</th><th>Cif</th><th>Dc</th><th>Saldo</th>
+            <th>Id</th><th>Sucursal</th><th>Numero</th><th>Nombre</th><th>Apellido</th><th>Dc</th><th>Saldo</th>
         </tr>
         <tr ng-repeat="cuentaBancaria in cuentasBancarias">
             <td>{{cuentaBancaria.idCuentaBancaria}}</td>
             <td>{{cuentaBancaria.sucursalBancaria.nombre}}</td>
-            <td>{{cuentaBancaria.numeroDeCuenta}}</td>
-            <td>{{cuentaBancaria.cif}}</td>
+            <td><a href="">{{cuentaBancaria.numeroDeCuenta}}</a></td>
+            <td>{{cuentaBancaria.cliente.nombre}}</td>
+            <td>{{cuentaBancaria.cliente.apellido}}</td>
             <td>{{cuentaBancaria.dc}}</td>
             <td>{{cuentaBancaria.saldo}}</td>
     </table>

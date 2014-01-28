@@ -17,6 +17,12 @@ app.config(function($routeProvider) {
                 controller: "EntidadesBancariasUpdateController"         //Controlador que hay que cargar
             }
     );
+    $routeProvider.when("/entidadBancaria/detalle/:idEntidadBancaria", //Ruta que usaremos para que cargue
+            {
+                templateUrl: "entidadbancaria/detail.html", //Pagina que hay que cargar
+                controller: "EntidadesBancariasDetalleController"         //Controlador que hay que cargar
+            }
+    );
 
 });
 /*ruta editar y nuevo*/
@@ -86,4 +92,18 @@ app.controller('EntidadesBancariasUpdateController', function($location,$scope, 
     $scope.buttonOK = function() {
         $scope.update();
     };
+});
+app.controller('EntidadesBancariasDetalleController', function($location,$scope, $http, urlBase, $routeParams) {
+    $scope.entidadBancaria= null;
+    $scope.sucursalesBancaria= [];
+    
+    $http.get(urlBase + "/api/EntidadBancaria/" + $routeParams.idEntidadBancaria).success(function(result) {
+        $scope.entidadBancaria = result;
+    });
+     $http.get(urlBase + "/api/EntidadBancaria/" + $scope.entidadBancaria.idEntidad).success(function(result) {
+        $scope.sucursalesBancaria = result;
+    });
+    
+    
+    
 });
