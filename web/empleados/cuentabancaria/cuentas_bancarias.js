@@ -18,6 +18,12 @@ app.config(function($routeProvider) {
                 controller: "CuentasBancariasUpdateController"         //Controlador que hay que cargar
             }
     );
+    $routeProvider.when("/cuentaBancaria/detallte/:idCuentaBancaria", //Ruta que usaremos para que cargue
+            {
+                templateUrl: "cuentabancaria/detalles.html", //Pagina que hay que cargar
+                controller: "CuentasBancariasUpdateController"         //Controlador que hay que cargar
+            }
+    );
         
 });
 
