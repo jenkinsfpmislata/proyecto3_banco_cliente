@@ -19,7 +19,7 @@ app.config(function($routeProvider) {
     );
     $routeProvider.when("/entidadBancaria/detalle/:idEntidadBancaria", //Ruta que usaremos para que cargue
             {
-                templateUrl: "entidadbancaria/detail.html", //Pagina que hay que cargar
+                templateUrl: "entidadbancaria/detalles.html", //Pagina que hay que cargar
                 controller: "EntidadesBancariasDetalleController"         //Controlador que hay que cargar
             }
     );
@@ -62,7 +62,6 @@ app.controller('EntidadesBancariasNewController', function($scope, $http, urlBas
     
     $scope.entidadBancaria= null;
     
-    
     $scope.insert = function() {
 
         $http.post(urlBase + "/api/EntidadBancaria/", $scope.entidadBancaria).success(function(result) {
@@ -99,9 +98,11 @@ app.controller('EntidadesBancariasDetalleController', function($location,$scope,
     
     $http.get(urlBase + "/api/EntidadBancaria/" + $routeParams.idEntidadBancaria).success(function(result) {
         $scope.entidadBancaria = result;
+               
     });
-     $http.get(urlBase + "/api/EntidadBancaria/" + $scope.entidadBancaria.idEntidad).success(function(result) {
-        $scope.sucursalesBancaria = result;
+     $http.get(urlBase + "/api/EntidadBancaria/1/sucursalesBancarias/").success(function(result) {
+       $scope.sucursalesBancaria = result;
+       
     });
     
     
