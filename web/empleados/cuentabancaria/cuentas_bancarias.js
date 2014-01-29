@@ -18,10 +18,10 @@ app.config(function($routeProvider) {
                 controller: "CuentasBancariasUpdateController"         //Controlador que hay que cargar
             }
     );
-    $routeProvider.when("/cuentaBancaria/detallte/:idCuentaBancaria", //Ruta que usaremos para que cargue
+    $routeProvider.when("/cuentaBancaria/detalle/:idCuentaBancaria", //Ruta que usaremos para que cargue
             {
                 templateUrl: "cuentabancaria/detalles.html", //Pagina que hay que cargar
-                controller: "CuentasBancariasUpdateController"         //Controlador que hay que cargar
+                controller: "CuentasBancariasDetalleController"         //Controlador que hay que cargar
             }
     );
         
@@ -121,4 +121,21 @@ app.controller('CuentasBancariasUpdateController', function($location,$scope, $h
     $scope.buttonOK = function() {
         $scope.update();
     };
+});
+app.controller('CuentasBancariasDetalleController', function($location,$scope, $http, urlBase, $routeParams) {
+    $scope.cuentaBancaria= null;
+    $scope.movimientosBancarios = [];
+    $http.get(urlBase + "/api/CuentaBancaria/" + $routeParams.idCuentaBancaria).success(function(result) {
+        $scope.cuentaBancaria = result;
+    
+    $http.get(urlBase + "/api/CuentaBancaria/"+$scope.cuentaBancaria.idCuentaBancaria+"/movimientosBancarios/").success(function(result) {
+       $scope.movimientosBancarios = result;
+       
+    });
+    
+    });
+    
+    
+    
+    
 });

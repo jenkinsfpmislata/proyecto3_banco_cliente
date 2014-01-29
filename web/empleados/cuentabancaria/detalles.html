@@ -9,6 +9,27 @@ and open the template in the editor.
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <div>TODO write content</div>
+        <h1>Numero de cuenta:{{cuentaBancaria.numeroDeCuenta}}</h1>
+        <h1>Saldo: {{cuentaBancaria.saldo}}</h1>
+        <h1>Propietario: {{cuentaBancaria.cliente.nombre}} {{cuentaBancaria.cliente.apellido}}</h1>
+        
+        <h2>Movimientos</h2>
+        
+        <table class="table table-bordered">
+        <tr>
+            <th>Fecha</th><th>Concepto</th><th>Tipo</th><th>Importe</th><th>Saldo Total</th>
+        </tr>
+        <tr ng-repeat="movimientoBancario in movimientosBancarios">
+            <td>{{movimientoBancario.fecha}}</td>
+            <td>{{movimientoBancario.concepto}}</td>
+            <td>{{movimientoBancario.tipoMovimientoBancario}}</td>            
+            <td>{{movimientoBancario.importe}}</td>
+            <td>{{movimientoBancario.saldoTotal}}</td>
+            
+    </table>
+        
+        
+        
+        
     </body>
 </html>

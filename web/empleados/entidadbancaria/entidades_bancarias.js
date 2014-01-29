@@ -98,12 +98,13 @@ app.controller('EntidadesBancariasDetalleController', function($location,$scope,
     
     $http.get(urlBase + "/api/EntidadBancaria/" + $routeParams.idEntidadBancaria).success(function(result) {
         $scope.entidadBancaria = result;
-               
-    });
-     $http.get(urlBase + "/api/EntidadBancaria/1/sucursalesBancarias/").success(function(result) {
+       
+        $http.get(urlBase + "/api/EntidadBancaria/"+$scope.entidadBancaria.idEntidad+"/sucursalesBancarias/").success(function(result) {
        $scope.sucursalesBancaria = result;
        
+    });        
     });
+     
     
     
     
