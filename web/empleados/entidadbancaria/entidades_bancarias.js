@@ -52,7 +52,7 @@ app.controller('EntidadesBancariasSearchController', function($scope, $http, url
         $http.delete(urlBase + "/api/EntidadBancaria/" + idEntidadBancaria).success(function(result) {
 
         });
-        $location.path("/entidadBancaria/search");
+        $location.path();
     };
     
     $scope.buscar();
@@ -63,7 +63,7 @@ app.controller('EntidadesBancariasNewController', function($scope, $http, urlBas
     $scope.entidadBancaria= null;
     
     $scope.insert = function() {
-
+          
         $http.post(urlBase + "/api/EntidadBancaria/", $scope.entidadBancaria).success(function(result) {
             $scope.entidadBancaria = result;
         });
