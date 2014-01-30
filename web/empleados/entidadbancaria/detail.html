@@ -1,25 +1,25 @@
 <div align="left" style="margin: 40px 50px;"> 
 
     <div id="contieneTabla" style="margin: 40px 100px">
-        <h5>Inserte su entidad Bancaria nueva</h5>
+        <h5>Insert new Bank Entity</h5>
                 
         <form>
-            <input type="text" ng-model="entidadBancaria.idEntidad" class="input-small" placeholder="IdEntidad" {{desactiva}}><br>
-            <input type="text" ng-model="entidadBancaria.codigoEntidad" class="input-small" placeholder="Codigo"><br>
+            <input type="text" ng-model="entidadBancaria.idEntidad" class="input-small" placeholder="IdEntity" {{desactiva}}><br>
+            <input type="text" ng-model="entidadBancaria.codigoEntidad" class="input-small" placeholder="Code"><br>
             <input type="text" ng-model="entidadBancaria.nombre" class="input-small" placeholder="C.I.F."><br>
-            <input type="text" ng-model="entidadBancaria.cif" class="input-small" placeholder="Nombre"> <br>
+            <input type="text" ng-model="entidadBancaria.cif" class="input-small" placeholder="Name"> <br>
 
 
             <select ng-model="entidadBancaria.tipoEntidadBancaria">
-                <option selected>Elije entidad</option>
-                <option value="CAJADEAHORRO">Caja de ahorros</option>
-                <option value="BANCO">Banco</option>
-                <option value="COOPERATIVA">Cooperativa Credito</option>
-                <option value="ESTABLECIMIENTO">Establ. Financiero</option>
+                <option selected>Select Entity Type</option>
+                <option value="CAJADEAHORRO">Savings Bank</option>
+                <option value="BANCO">Bank</option>
+                <option value="COOPERATIVA">Credit Cooperative</option>
+                <option value="ESTABLECIMIENTO">Financial Institution</option>
             </select>
         </form>
         <br/><br/>
-        <button type="button" class="btn" ng-click="buttonOK()">enviar</button>
+        <button type="button" class="btn" ng-click="buttonOK()">Submit</button>
         
         <p><a href="#/">Inicio</a></p>
     </div>

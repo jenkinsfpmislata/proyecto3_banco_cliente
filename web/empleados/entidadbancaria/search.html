@@ -4,7 +4,7 @@
     <button ng-click="buscar()" class="btn">buscar</button>
     <table class="table table-bordered">
         <tr>
-            <th>Id</th><th>Codigo</th><th>Nombre</th><th>Cif</th><th>Tipo Entidad</th><th></th><th></th>
+            <th>Id</th><th>Code</th><th>Name</th><th>Cif</th><th>Entity Type</th><th></th><th></th>
         </tr>
         <tr ng-repeat="entidadBancaria in entidadesBancarias">
             <td>{{entidadBancaria.idEntidad}}</td>
@@ -15,5 +15,5 @@
             <td><a href='#/entidadBancaria/update/{{entidadBancaria.idEntidad}}' class="btn btn-info">Editar</a></td>
             <td><button ng-click="borrar(entidadBancaria.idEntidad)" class="btn btn-danger">Borrar</button></td>
     </table>
-    <p><a href="#/entidadBancaria/new" >Insertar Entidad</a></p>
+    <p><a href="#/entidadBancaria/new" >Insert Entity</a></p>
 </div>

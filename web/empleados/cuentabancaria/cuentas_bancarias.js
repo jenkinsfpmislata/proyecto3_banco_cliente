@@ -29,8 +29,6 @@ app.config(function($routeProvider) {
 
 app.controller('CuentasBancariasSearchController', function($scope, $http, urlBase) {
 
-    
-    
     $scope.cuenta = null;
     $scope.cuentasBancarias = [];
     $scope.nombreCuentaBancaria = null;

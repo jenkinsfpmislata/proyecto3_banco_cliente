@@ -9,18 +9,18 @@ and open the template in the editor.
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <h1>Numero de cuenta:{{cuentaBancaria.numeroDeCuenta}}</h1>
-        <h1>Saldo: {{cuentaBancaria.saldo}}</h1>
-        <h1>Propietario: {{cuentaBancaria.cliente.nombre}} {{cuentaBancaria.cliente.apellido}}</h1>
+        <h1>Number account:{{cuentaBancaria.numeroDeCuenta}}</h1>
+        <h1>Balance: {{cuentaBancaria.saldo}}</h1>
+        <h1>Propietary: {{cuentaBancaria.cliente.nombre}} {{cuentaBancaria.cliente.apellido}}</h1>
         
-        <h2>Movimientos</h2>
+        <h2>Movements</h2>
         
         <table class="table table-bordered">
         <tr>
-            <th>Fecha</th><th>Concepto</th><th>Tipo</th><th>Importe</th><th>Saldo Total</th>
+            <th>Date</th><th>Concept</th><th>Type</th><th>Amount</th><th>Total Balance</th>
         </tr>
         <tr ng-repeat="movimientoBancario in movimientosBancarios">
-            <td>{{movimientoBancario.fecha}}</td>
+            <td>{{movimientoBancario.fecha | date:'medium'}}</td>
             <td>{{movimientoBancario.concepto}}</td>
             <td>{{movimientoBancario.tipoMovimientoBancario}}</td>            
             <td>{{movimientoBancario.importe}}</td>

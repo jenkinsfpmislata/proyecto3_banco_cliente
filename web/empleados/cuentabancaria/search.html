@@ -4,7 +4,7 @@
     <button ng-click="buscar()" class="btn">buscar</button>
     <table class="table table-bordered">
         <tr>
-            <th>Id</th><th>Sucursal</th><th>Numero</th><th>Nombre</th><th>Apellido</th><th>Dc</th><th>Saldo</th>
+            <th>Id</th><th>Office</th><th>Number</th><th>Name</th><th>Surname</th><th>Dc</th><th>Balance</th>
         </tr>
         <tr ng-repeat="cuentaBancaria in cuentasBancarias">
             <td>{{cuentaBancaria.idCuentaBancaria}}</td>
@@ -15,5 +15,5 @@
             <td>{{cuentaBancaria.dc}}</td>
             <td>{{cuentaBancaria.saldo}}</td>
     </table>
-    <p><a href="#/cuentaBancaria/new" >Insertar Cuenta</a></p>
+    <p><a href="#/cuentaBancaria/new" >Insert Account</a></p>
 </div>

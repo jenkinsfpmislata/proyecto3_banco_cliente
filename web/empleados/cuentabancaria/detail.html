@@ -1,28 +1,28 @@
 <div align="left" style="margin: 40px 50px;"> 
 
     <div id="contieneTabla" style="margin: 40px 100px">
-        <h5>Inserte su cuenta Bancaria nueva</h5>
+        <h5>Insert new Bank Account</h5>
                 
         <form>
             
             <select ng-model="idEntidad" ng-options="entidad.idEntidad as entidad.nombre for entidad in entidadesBancarias">
-            <option value="">-- Elige Entidad --</option>
+            <option value="">-- Select Entity --</option>
             </select><br>
             
             <select ng-model="cuentaBancaria.sucursalBancaria.idSucursalBancaria"  ng-options="sucursal.idSucursalBancaria as sucursal.nombre for sucursal in sucursalesBancarias">
-            <option value="">-- Elige Sucursal --</option>
+            <option value="">-- Select Office --</option>
             </select><br>
             
-            <input type="text" ng-model="cuentaBancaria.numeroDeCuenta" class="input-small" placeholder="Numero"><br>
+            <input type="text" ng-model="cuentaBancaria.numeroDeCuenta" class="input-small" placeholder="Number"><br>
             <input type="text" ng-model="cuentaBancaria.dc" class="input-small" placeholder="DC"><br>
             <input type="text" ng-model="cuentaBancaria.cif" class="input-small" placeholder="Cif"> <br>
-            <input type="text" ng-model="cuentaBancaria.saldo" class="input-small" placeholder="Saldo"> <br>
+            <input type="text" ng-model="cuentaBancaria.saldo" class="input-small" placeholder="Balance"> <br>
 
 
             
         </form>
         <br/><br/>
-        <button type="button" class="btn" ng-click="buttonOK()">enviar</button>
+        <button type="button" class="btn" ng-click="buttonOK()">Submit</button>
         
         <p><a href="#/">Inicio</a></p>
     </div>
