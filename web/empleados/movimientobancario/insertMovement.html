@@ -1,0 +1,19 @@
+
+<div>
+    <form>
+
+        <input type="text" ng-model="movimientoBancario.importe" class="input-small" placeholder="importe"><br>
+        <input type="text" ng-model="movimientoBancario.concepto" class="input-small" placeholder="concepto"> <br>
+        <input type="text" ng-model="movimientoBancario.fecha" class="input-small" placeholder="fecha"> <br>
+        
+        <select ng-model="movimientoBancario.tipoMovimientoBancario">
+            <option value="DEBE">DEBE</option>
+                <option value="HABER">HABER</option>
+        </select>
+    </form>
+    <br/><br/>
+    <button type="button" class="btn" ng-click="buttonOK()">Submit</button>
+
+
+</div>
+

@@ -59,8 +59,6 @@ app.controller('CuentasBancariasSearchController', function($scope, $http, urlBa
 
 app.controller('CuentasBancariasNewController', function($scope, $http, urlBase, $location) {
     
-    
-    
     $scope.entidadesBancarias;
  
     $scope.idEntidad = null;
