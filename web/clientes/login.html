@@ -51,12 +51,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <br>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default" value="Login" disabled><a class="glyphicon glyphicon-log-in"></a></button>
-                            <!--<button type="button" class="btn btn-default btn-primary" onClick="window.location.href = 'empleados/index.html'" value="Trabajador">Employee</button>
-                            -->
-                            <button type="button" class="btn btn-default btn-primary" onClick=" window.location.href = '../clientes/login.html'" value="Cliente">&nbsp Client &nbsp</button>
-                        </div>
+  
                     </ul>
                 </div><!-- /.navbar-collapse -->
 
@@ -67,7 +62,18 @@
             <hr>
             <div class="row">
                 <div class="col-lg-8 col-sm-8">  
-                    <ng-view></ng-view>
+                   <!--<ng-view></ng-view>-->
+                    
+          
+                    <form>
+                        <input type="text"/>
+                        <input type="text"/>
+                        <button type="button" class="btn btn-default btn-primary" onClick=" window.location.href = './index.html'" value="Cliente">&nbsp Login &nbsp</button>
+
+                    </form>
+                   
+                   <a href="index.html">Enlace</a>
+                    
                 </div>
             </div>
             <hr>
@@ -88,3 +94,4 @@
 
     </body>
 </html>
+
