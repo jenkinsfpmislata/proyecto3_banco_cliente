@@ -9,7 +9,7 @@
         <tr ng-repeat="entidadBancaria in entidadesBancarias">
             <td>{{entidadBancaria.idEntidad}}</td>
             <td>{{entidadBancaria.codigoEntidad}}</td>
-            <td><a href='#/entidadBancaria/detalle/{{entidadBancaria.idEntidad}}'>{{entidadBancaria.nombre}}</a></td>
+            <td><a href='#/sucursalBancaria/search/{{entidadBancaria.idEntidad}}'>{{entidadBancaria.nombre}}</a></td>
             <td>{{entidadBancaria.cif}}</td>
             <td>{{entidadBancaria.tipoEntidadBancaria}}</td>
             <td><a href='#/entidadBancaria/update/{{entidadBancaria.idEntidad}}' class="btn btn-info">Editar</a></td>

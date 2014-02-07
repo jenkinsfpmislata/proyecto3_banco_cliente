@@ -3,16 +3,19 @@
     <div id="contieneTabla" style="margin: 40px 100px">
         <h1>Entity:{{entidadBancaria.nombre}}</h1>
         <h1>Office</h1>
-                
+
         <table class="table table-bordered">
-        <tr>
-            <th>Name</th><th>Code</th>
-        </tr>
-        <tr ng-repeat="sucursalBancaria in sucursalesBancaria">
-            <td>{{sucursalBancaria.nombre}}</td>
-            <td>{{sucursalBancaria.codigoSucursal}}</td>
-            
-    </table>
-        
+            <tr>
+                <th>Name</th><th>Code</th><th></th><th></th>
+            </tr>
+            <tr ng-repeat="sucursalBancaria in sucursalesBancarias">
+                <td>{{sucursalBancaria.nombre}}</td>
+                <td>{{sucursalBancaria.codigoSucursal}}</td>
+                <td><a href='#/sucursalBancaria/update/{{sucursalBancaria.idSucursalBancaria}}' class="btn btn-info">Editar</a></td>
+                <td><button ng-click="borrar(sucursalBancaria.idSucursalBancaria)" class="btn btn-danger">Borrar</button></td>
+            </tr>
+        </table>
+        <p><a href="#/sucursalBancaria/new/{{entidadBancaria.idEntidad}}" >Insert Entity</a></p>
+
     </div>
 </div>
