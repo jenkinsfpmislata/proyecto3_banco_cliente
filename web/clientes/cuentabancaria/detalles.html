@@ -1,0 +1,28 @@
+<h1>Client Bank Account</h1>        
+
+  <div align="left" style="margin: 40px 50px;"> 
+
+    <div id="contieneTabla" style="margin: 40px 100px">
+        <h1>Client ID {{idCliente}}</h1>
+                
+        <table class="table table-bordered">
+        <tr>
+            <th>Account ID</th><th>Amount</th><th>DC</th><th>Cif</th>
+        </tr>
+       
+        <tr ng-repeat="cuentabancaria in cuentabancaria">
+      
+            <td>{{cuentabancaria.idCuentaBancaria}}</td>
+            <td>{{cuentabancaria.saldo}}</td>
+            <td>{{cuentabancaria.dc}}</td>
+            <td>{{cuentabancaria.cif}}</td>
+            <td><button type="button" class="btn btn-default btn-primary" onClick=" window.location.href = '#/movimientoBancario/detalles/'">Movements</button></td>
+            <!-- <td>{{pepe}}</td>-->
+      </tr>
+    </table>
+        
+        <!--  <td><a href='#/cliente_datos/{{cliente.idEntidad}}' class="btn btn-info">Movements</a></td>
+        -->
+    </div>
+
+</div>
