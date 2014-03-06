@@ -1,25 +1,25 @@
-<div align="left" style="margin: 40px 50px;"> 
+<div class="col-lg-6">
+    <form class="well">
+        <fieldset>
+            <legend>Insert new Bank Entity</legend>
+            <div class="control-group">
+                <!--<input type="text" ng-model="entidadBancaria.idEntidad" class="input-small" placeholder="IdEntity" readonly=""><br>-->
+                <input type="text" ng-model="entidadBancaria.codigoEntidad" class="form-control" placeholder="Code"><br>
+                <input type="text" ng-model="entidadBancaria.nombre" class="form-control" placeholder="Name"><br>
+                <input type="text" ng-model="entidadBancaria.cif" class="form-control" placeholder="CIF"> <br>
 
-    <div id="contieneTabla" style="margin: 40px 100px">
-        <h5>Insert new Bank Entity</h5>
-                
-        <form>
-            <!--<input type="text" ng-model="entidadBancaria.idEntidad" class="input-small" placeholder="IdEntity" readonly=""><br>-->
-            <input type="text" ng-model="entidadBancaria.codigoEntidad" class="input-small" placeholder="Code"><br>
-            <input type="text" ng-model="entidadBancaria.nombre" class="input-small" placeholder="C.I.F."><br>
-            <input type="text" ng-model="entidadBancaria.cif" class="input-small" placeholder="Name"> <br>
 
+                <select ng-model="entidadBancaria.tipoEntidadBancaria" class="form-control">
+                    <option value="BANCO" selected="">BANCO</option>
+                    <option value="CAJADEAHORRO">CAJADEAHORRO</option>
+                    <option value="COOPERATIVA">COOPERATIVA</option>
+                    <option value="ESTABLECIMIENTO">ESTABLECIMIENTO</option>
+                </select>
 
-            <select ng-model="entidadBancaria.tipoEntidadBancaria">
-                <option value="BANCO" selected>BANCO</option>
-                <option value="CAJADEAHORRO">CAJADEAHORRO</option>
-                <option value="COOPERATIVA">COOPERATIVA</option>
-                <option value="ESTABLECIMIENTO">ESTABLECIMIENTO</option>
-                 </select>
-        </form>
-        <br/><br/>
-        <button type="button" class="btn" ng-click="buttonOK()">Submit</button>
-        
-        <p><a href="#/">Inicio</a></p>
-    </div>
+            </div>
+        </fieldset>
+    </form>
+    <button type="button" class="btn btn-primary" ng-click="buttonOK()">Submit</button>
 </div>
+
+

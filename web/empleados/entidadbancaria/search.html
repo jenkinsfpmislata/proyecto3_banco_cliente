@@ -1,10 +1,18 @@
-<h1 align="center">Entidades Bancarias</h1>
-<div align="center" style="margin: 40px 50px;" ng-controller="EntidadesBancariasSearchController"> 
-    <input type="text" class="input-medium search-query" placeholder="Find by name" ng-model="nombre">
-    <button ng-click="buscar()" class="btn">buscar</button>
-    <table class="table table-bordered">
+<div ng-controller="EntidadesBancariasSearchController">
+   
+        <div id="search">
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control" placeholder="Search by name" ng-model="nombre">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" ng-click="buscar()"><span class="fa fa-search"></span></button>
+                </span>
+            </div>
+        </div>
+    
+    <table class="table table-striped table-bordered table-condensed">
+        <tr><th colspan="7"><h3>Entity's Bank</h3></th></tr>
         <tr>
-            <th>Id</th><th>Code</th><th>Name</th><th>Cif</th><th>Entity Type</th><th></th><th></th>
+            <th>#</th><th>Code</th><th>Name</th><th>Cif</th><th>Entity Type</th><th colspan="2"></th>
         </tr>
         <tr ng-repeat="entidadBancaria in entidadesBancarias">
             <td>{{entidadBancaria.idEntidad}}</td>
@@ -12,8 +20,8 @@
             <td><a href='#/sucursalBancaria/search/{{entidadBancaria.idEntidad}}'>{{entidadBancaria.nombre}}</a></td>
             <td>{{entidadBancaria.cif}}</td>
             <td>{{entidadBancaria.tipoEntidadBancaria}}</td>
-            <td><a href='#/entidadBancaria/update/{{entidadBancaria.idEntidad}}' class="btn btn-info">Editar</a></td>
-            <td><button ng-click="borrar(entidadBancaria.idEntidad)" class="btn btn-danger">Borrar</button></td>
+            <td><a href='#/entidadBancaria/update/{{entidadBancaria.idEntidad}}' class="btn btn-info fa fa-edit"> </a></td>
+            <td><button ng-click="borrar(entidadBancaria.idEntidad)" class="btn btn-danger glyphicon fa fa-trash-o"> </button></td>
     </table>
     <p><a href="#/entidadBancaria/new" >Insert Entity</a></p>
 </div>

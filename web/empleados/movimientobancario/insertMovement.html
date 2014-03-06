@@ -1,19 +1,17 @@
 
-<div>
-    <form>
+<div class="col-lg-6">
+    <form class="well">
+        <fieldset>
+            <legend>Insert new Transaction</legend>
+            <input type="text" ng-model="movimientoBancario.importe" class="form-control" placeholder="Amount"><br>
+            <input type="text" ng-model="movimientoBancario.concepto" class="form-control" placeholder="Concept"> <br>
+            <input type="text" ng-model="movimientoBancario.fecha" class="form-control" placeholder="Date"> <br>
 
-        <input type="text" ng-model="movimientoBancario.importe" class="input-small" placeholder="importe"><br>
-        <input type="text" ng-model="movimientoBancario.concepto" class="input-small" placeholder="concepto"> <br>
-        <input type="text" ng-model="movimientoBancario.fecha" class="input-small" placeholder="fecha"> <br>
-        
-        <select ng-model="movimientoBancario.tipoMovimientoBancario">
-            <option value="DEBE">DEBE</option>
+            <select ng-model="movimientoBancario.tipoMovimientoBancario" class="form-control">
+                <option value="DEBE">DEBE</option>
                 <option value="HABER">HABER</option>
-        </select>
+            </select>
+        </fieldset>
     </form>
-    <br/><br/>
-    <button type="button" class="btn" ng-click="buttonOK()">Submit</button>
-
-
+    <button type="button" class="btn btn-primary" ng-click="buttonOK()">Submit</button>
 </div>
-

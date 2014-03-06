@@ -12,10 +12,10 @@ app.config(function($routeProvider) {
 
 });
 
-app.controller('ClienteDetailController', function($scope, $http, urlBase) {
+app.controller('ClienteDetailController', function($scope, $http, urlBase,$routeParams) {
    $scope.cliente=[];
    $scope.idCliente = 1;
-    $http.get(urlBase+"/api/Cliente/"+$scope.idCliente).success(function(resultado) {
+    $http.get(urlBase + "/api/Cliente/"+$scope.idCliente).success(function(resultado) {
         $scope.cliente = resultado; 
         
     }

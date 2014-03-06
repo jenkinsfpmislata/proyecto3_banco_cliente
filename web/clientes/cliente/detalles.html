@@ -1,26 +1,28 @@
 <h1>Your Bank Account</h1>        
 
-  <div align="left" style="margin: 40px 50px;"> 
+<div align="left" style="margin: 40px 50px;"> 
 
     <div id="contieneTabla" style="margin: 40px 100px">
         <h2>Details:</h2>
-                
+
         <table class="table table-bordered">
-        <tr>
-           <th>Name</th><th>Surname</th><th>Cif</th>
-        </tr>
-        <tr>
-        <!--<tr ng-repeat="cliente in cliente">
-      -->
-            <td>{{cliente.nombre}}</td>
-            <td>{{cliente.apellido}}</td>
-            <td>{{cliente.cif}}</td>
-           <!-- <td>{{pepe}}</td>-->
-      </tr>
-    </table>
+            <tr>
+                <th>Name</th><th>Surname</th><th>Cif</th>
+            </tr>
+            <tr>
+                <!--<tr ng-repeat="cliente in clientes">
+                --> <tr ng-repeat="cliente in cliente">
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.apellido}}</td>
+                <td>{{cliente.cif}}</td>
+                <!-- <td>{{pepe}}</td>-->
+            </tr>
+        </table>
+        <a href="#/cliente/detalles/" >link EB</a></p>
         <!--  <td><a href='#/cliente_datos/{{cliente.idEntidad}}' class="btn btn-info">Movements</a></td>
+        
         -->
     </div>
-     
+
 
 </div>

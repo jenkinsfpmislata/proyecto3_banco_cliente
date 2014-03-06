@@ -1,10 +1,18 @@
-<h1 align="center">Cuentas Bancarias</h1>
-<div align="center" style="margin: 40px 50px;" ng-controller="CuentasBancariasSearchController"> 
-    <input type="text" class="input-medium search-query" placeholder="Find by Cif" ng-model="cif">
-    <button ng-click="buscar()" class="btn">buscar</button>
-    <table class="table table-bordered">
+<h1 align="center">Account's Bank</h1>
+
+<div ng-controller="CuentasBancariasSearchController"> 
+    <div id="search">
+        <div class="input-group input-group-sm">
+            <input type="text" class="form-control" placeholder="Search by cif" ng-model="cif">
+            <span class="input-group-btn">
+                <button class="btn btn-default" ng-click="buscar()"><span class="fa fa-search"></span></button>
+            </span>
+        </div>
+    </div>
+    <table class="table table-striped table-bordered table-condensed">
+        <tr><th colspan="8"><h3>Account's Bank</h3></th></tr>
         <tr>
-            <th>Id</th><th>Office</th><th>Number</th><th>Name</th><th>Surname</th><th>Dc</th><th>Balance</th>
+            <th>Id</th><th>Office</th><th>Number</th><th>Name</th><th>Surname</th><th>Dc</th><th>Balance</th><th>cif</th>
         </tr>
         <tr ng-repeat="cuentaBancaria in cuentasBancarias">
             <td>{{cuentaBancaria.idCuentaBancaria}}</td>
@@ -14,6 +22,7 @@
             <td>{{cuentaBancaria.cliente.apellido}}</td>
             <td>{{cuentaBancaria.dc}}</td>
             <td>{{cuentaBancaria.saldo}}</td>
+            <td>{{cuentaBancaria.cif}}</td>
     </table>
     <p><a href="#/cuentaBancaria/new" >Insert Account</a></p>
 </div>
