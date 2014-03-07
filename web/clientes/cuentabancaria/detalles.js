@@ -13,18 +13,20 @@ app.config(function($routeProvider) {
 
 });
 
-app.controller('CuentaBancariaDetailController', function($scope, $http, urlBase) {
+app.controller('CuentaBancariaDetailController', function($scope, $http, urlBase, $httpSession) {
 
    $scope.cuentabancaria=[];
-   $scope.idCliente = 1;
+   $scope.idCliente = $httpSession;
 
     $http.get(urlBase+"/api/Cliente/"+$scope.idCliente+"/CuentaBancaria").success(function(resultado) {
 
-       // $scope.cliente = resultado; 
         $scope.cuentabancaria=resultado;
         
     }
 );
-
+    $scope.salir = function() {
+        $http.delete(urlBase + "/api/Session/").success(function() {}
+        );
+    };
 
 }); 

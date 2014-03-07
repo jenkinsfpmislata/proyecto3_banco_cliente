@@ -13,17 +13,20 @@ app.config(function($routeProvider) {
 
 });
 
-app.controller('MovimientosBancariosDetailController', function($scope, $http, urlBase, $routeParams) {
+app.controller('MovimientosBancariosDetailController', function($scope, $http, urlBase, $routeParams, $httpSession) {
 
     $scope.movimientosbancarios = [];
-    $scope.idCuentaBancaria = 1;
-    $scope.idCliente="Pepe";
+    $scope.idCuentaBancaria = $httpSession;
+
     $http.get(urlBase + "/api/CuentaBancaria/" + $scope.idCuentaBancaria + "/movimientosBancarios/").success(function(resultado) {
         $scope.movimientosbancarios = resultado;
 
     }
     );
-
+    $scope.salir = function() {
+        $http.delete(urlBase + "/api/Session/").success(function() {}
+        );
+    };
 
 
 });

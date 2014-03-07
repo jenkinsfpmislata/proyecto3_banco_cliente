@@ -1,28 +1,27 @@
 <h1>Your Bank Movements</h1>        
 
-  <div align="left" style="margin: 40px 50px;"> 
+<div align="left" style="margin: 40px 50px;"> 
 
     <div id="contieneTabla" style="margin: 40px 100px">
         <h1>Client: {{idCliente}}</h1>
-                
+
         <table class="table table-bordered">
-        <tr>
-            <th>Movements ID</th><th>Account ID</th><th>Type</th><th>Concept</th><th>Amount</th>
-        </tr>
-       
-        <tr ng-repeat="movimientosbancarios in movimientosbancarios">
-      
-            <td>{{movimientosbancarios.idMovimientoBancario}}</td>
-            <td>{{idCuentaBancaria}}</td>
-            <td>{{movimientosbancarios.tipoMovimientoBancario}}</td>
-            <td>{{movimientosbancarios.concepto}}</td>
-            <td>{{movimientosbancarios.importe}}</td>
-            <!-- <td>{{pepe}}</td>-->
-      </tr>
-    </table>
-        
-        <!--  <td><a href='#/cliente_datos/{{cliente.idEntidad}}' class="btn btn-info">Movements</a></td>
-        -->
+            <tr>
+                <th>Movements ID</th><th>Account ID</th><th>Type</th><th>Concept</th><th>Amount</th>
+            </tr>
+
+            <tr ng-repeat="movimientosbancarios in movimientosbancarios">
+
+                <td>{{movimientosbancarios.idMovimientoBancario}}</td>
+                <td>{{idCuentaBancaria}}</td>
+                <td>{{movimientosbancarios.tipoMovimientoBancario}}</td>
+                <td>{{movimientosbancarios.concepto}}</td>
+                <td>{{movimientosbancarios.importe}}</td>
+
+            </tr>
+        </table>
+  
     </div>
+    <button class="btn btn-default btn-primary" ng-click="salir()">Salir</button><br />
 
 </div>
